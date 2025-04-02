@@ -1,0 +1,88 @@
+-aether-sentinel/dashboard.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hydro-Aether Sentinel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-water"></i> Hydro-Aether Sentinel</div>
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="data-analysis.html"><i class="fas fa-microscope"></i> Data Analysis</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </nav>
+    
+    <div class="dashboard-container">
+        <div class="weather-comparison">
+            <div class="outdoor-conditions">
+                <h2><i class="fas fa-cloud-sun"></i> Outdoor Conditions - Chennai</h2>
+                <div class="weather-grid">
+                    <div class="weather-card">
+                        <img id="weather-icon" alt="Weather Icon">
+                        <div id="outdoor-temp">Loading...</div>
+                        <div id="weather-desc">Loading...</div>
+                    </div>
+                    <div class="weather-card">
+                        <i class="fas fa-wind"></i>
+                        <div id="outdoor-aqi">Loading...</div>
+                        <div>Outdoor AQI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="indoor-metrics">
+            <h2><i class="fas fa-home"></i> Indoor Environment</h2>
+            <div class="metrics-grid">
+                <div class="metric-card temperature">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Temperature</h3>
+                    <div class="value" id="temp">Loading...</div>
+                    <div class="comparison" id="temp-comparison"></div>
+                </div>
+                <div class="metric-card humidity">
+                    <i class="fas fa-tint"></i>
+                    <h3>Humidity</h3>
+                    <div class="value" id="humidity">Loading...</div>
+                </div>
+                <div class="metric-card turbidity">
+                    <i class="fas fa-water"></i>
+                    <h3>Turbidity</h3>
+                    <div class="value" id="turbidity">Loading...</div>
+                </div>
+                <div class="metric-card tds">
+                    <i class="fas fa-flask"></i>
+                    <h3>TDS</h3>
+                    <div class="value" id="tds">Loading...</div>
+                </div>
+                <div class="metric-card gas">
+                    <i class="fas fa-smog"></i>
+                    <h3>Gas Level</h3>
+                    <div class="value" id="gasLevel">Loading...</div>
+                </div>
+                <div class="metric-card air">
+                    <i class="fas fa-wind"></i>
+                    <h3>Air Quality</h3>
+                    <div class="value" id="airQuality">Loading...</div>
+                    <div class="comparison" id="aqi-comparison"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="dataChart"></canvas>
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
